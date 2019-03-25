@@ -15,6 +15,7 @@
 		B483FEA922490E4B00616FDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEA822490E4B00616FDC /* main.m */; };
 		B483FEB322490E4C00616FDC /* iOSSweetSugarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEB222490E4C00616FDC /* iOSSweetSugarTests.m */; };
 		B483FEBE22490E4C00616FDC /* iOSSweetSugarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEBD22490E4C00616FDC /* iOSSweetSugarUITests.m */; };
+		B483FECE22490E9200616FDC /* MMDispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FECD22490E9200616FDC /* MMDispatchTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		B483FEB922490E4C00616FDC /* iOSSweetSugarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSSweetSugarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B483FEBD22490E4C00616FDC /* iOSSweetSugarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSSweetSugarUITests.m; sourceTree = "<group>"; };
 		B483FEBF22490E4C00616FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B483FECC22490E9200616FDC /* MMDispatchTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDispatchTimer.h; sourceTree = "<group>"; };
+		B483FECD22490E9200616FDC /* MMDispatchTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDispatchTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		B483FE9822490E4900616FDC /* iOSSweetSugar */ = {
 			isa = PBXGroup;
 			children = (
+				B483FECB22490E5B00616FDC /* dispatch定时器 */,
 				B483FE9922490E4900616FDC /* AppDelegate.h */,
 				B483FE9A22490E4900616FDC /* AppDelegate.m */,
 				B483FE9C22490E4900616FDC /* ViewController.h */,
@@ -130,6 +134,15 @@
 				B483FEBF22490E4C00616FDC /* Info.plist */,
 			);
 			path = iOSSweetSugarUITests;
+			sourceTree = "<group>";
+		};
+		B483FECB22490E5B00616FDC /* dispatch定时器 */ = {
+			isa = PBXGroup;
+			children = (
+				B483FECC22490E9200616FDC /* MMDispatchTimer.h */,
+				B483FECD22490E9200616FDC /* MMDispatchTimer.m */,
+			);
+			path = "dispatch定时器";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +278,7 @@
 				B483FE9E22490E4900616FDC /* ViewController.m in Sources */,
 				B483FEA922490E4B00616FDC /* main.m in Sources */,
 				B483FE9B22490E4900616FDC /* AppDelegate.m in Sources */,
+				B483FECE22490E9200616FDC /* MMDispatchTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mm.CoreTextDemo.iOSSweetSugar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mm.iOSSweetSugar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -457,7 +471,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mm.CoreTextDemo.iOSSweetSugar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mm.iOSSweetSugar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
