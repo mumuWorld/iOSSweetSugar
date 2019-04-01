@@ -40,6 +40,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)mm_asyncCircleImage:(UIImage *)image withSize:(CGSize)size withComplite:(void(^)(UIImage *circle_image))handler;
 
 
+/**
+ 截屏
+
+ @param view 传入的view
+ @return UIImage
+ */
++ (UIImage *)mm_imageWithView:(UIView *)view;
 @end
 
 NS_ASSUME_NONNULL_END

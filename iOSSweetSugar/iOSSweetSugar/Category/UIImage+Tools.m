@@ -55,4 +55,48 @@
         });
     });
 }
+#pragma mark - ----------------------截屏
++ (UIImage *)mm_imageWithView:(UIView *)view
+{
+    CGRect rect = view.bounds;
+    if (CGRectIsEmpty(rect) ||
+        CGRectIsNull(rect) ||
+        CGRectIsInfinite(rect) ||
+        view.superview == nil ||
+        view.window == nil ||
+        view.window.hidden ) { //window hidden的时候，直接retrun
+        return nil;
+    }
+    
+    //https://github.com/kif-framework/KIF/issues/679
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0f);
+    
+    UIImage * snapshotImage = NULL;
+    
+    if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+        BOOL drawSuccess = [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
+        if (drawSuccess) {
+            snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+        }
+    } else {
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+        snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+    }
+    
+    UIGraphicsEndImageContext();
+    
+    if (!snapshotImage){ //如果不存在用最传统的方法。
+        snapshotImage = [self mm_snapshotImage:view];
+    }
+    
+    return snapshotImage;
+}
+
++ (UIImage *)mm_snapshotImage:(UIView *)view {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *snap = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return snap;
+}
 @end
