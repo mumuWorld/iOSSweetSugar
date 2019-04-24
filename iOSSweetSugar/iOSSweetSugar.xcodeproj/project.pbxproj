@@ -18,6 +18,8 @@
 		B483FEB322490E4C00616FDC /* iOSSweetSugarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEB222490E4C00616FDC /* iOSSweetSugarTests.m */; };
 		B483FEBE22490E4C00616FDC /* iOSSweetSugarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEBD22490E4C00616FDC /* iOSSweetSugarUITests.m */; };
 		B483FECE22490E9200616FDC /* MMDispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FECD22490E9200616FDC /* MMDispatchTimer.m */; };
+		DF9529E2226FF57E00EEEB17 /* NSURL+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9529E1226FF57E00EEEB17 /* NSURL+Tools.m */; };
+		DF9529E5226FF5EF00EEEB17 /* NSDate+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9529E4226FF5EF00EEEB17 /* NSDate+Tools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		B483FEBF22490E4C00616FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B483FECC22490E9200616FDC /* MMDispatchTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDispatchTimer.h; sourceTree = "<group>"; };
 		B483FECD22490E9200616FDC /* MMDispatchTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDispatchTimer.m; sourceTree = "<group>"; };
+		DF9529E0226FF57E00EEEB17 /* NSURL+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Tools.h"; sourceTree = "<group>"; };
+		DF9529E1226FF57E00EEEB17 /* NSURL+Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Tools.m"; sourceTree = "<group>"; };
+		DF9529E3226FF5EF00EEEB17 /* NSDate+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Tools.h"; sourceTree = "<group>"; };
+		DF9529E4226FF5EF00EEEB17 /* NSDate+Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Tools.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,10 @@
 				B4406BE52250BFE1003410A3 /* UIImage+Tools.m */,
 				B4406BE72250C514003410A3 /* UIColor+Tools.h */,
 				B4406BE82250C514003410A3 /* UIColor+Tools.m */,
+				DF9529E0226FF57E00EEEB17 /* NSURL+Tools.h */,
+				DF9529E1226FF57E00EEEB17 /* NSURL+Tools.m */,
+				DF9529E3226FF5EF00EEEB17 /* NSDate+Tools.h */,
+				DF9529E4226FF5EF00EEEB17 /* NSDate+Tools.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -297,6 +307,8 @@
 				B483FEA922490E4B00616FDC /* main.m in Sources */,
 				B483FE9B22490E4900616FDC /* AppDelegate.m in Sources */,
 				B4406BE62250BFE1003410A3 /* UIImage+Tools.m in Sources */,
+				DF9529E5226FF5EF00EEEB17 /* NSDate+Tools.m in Sources */,
+				DF9529E2226FF57E00EEEB17 /* NSURL+Tools.m in Sources */,
 				B483FECE22490E9200616FDC /* MMDispatchTimer.m in Sources */,
 				B4406BE92250C514003410A3 /* UIColor+Tools.m in Sources */,
 			);

@@ -47,6 +47,19 @@ NS_ASSUME_NONNULL_BEGIN
  @return UIImage
  */
 + (UIImage *)mm_imageWithView:(UIView *)view;
+
+/**
+ 从bundle中获取图片 节约内存开销,默认 png。
+ */
++ (UIImage *)mm_imageWithFileName:(NSString *)name andType:(nullable NSString *)type;
+
+/**
+ 传入需要的占位图尺寸 获取占位图
+ 
+ @param size 需要的站位图尺寸
+ @return 占位图
+ */
++ (UIImage *)placeholderImageWithSize:(CGSize)size;
 @end
 
 NS_ASSUME_NONNULL_END

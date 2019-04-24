@@ -99,4 +99,51 @@
     UIGraphicsEndImageContext();
     return snap;
 }
+
+/**
+ 从bundle中获取图片 节约内存开销
+ */
++ (UIImage *)mm_imageWithFileName:(NSString *)name andType:(nullable NSString *)type {
+    if (!name) {
+        return nil;
+    }
+    NSString *imageName;
+    if (type.length < 1) {
+        imageName = [NSString stringWithFormat:@"%@.png",name];
+    } else {
+        imageName = [NSString stringWithFormat:@"%@.%@",name,type];
+    }
+    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:imageName];
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+    return image;
+}
+/**
+ 传入需要的占位图尺寸 获取占位图
+ 
+ @param size 需要的站位图尺寸
+ @return 占位图
+ */
++ (UIImage *)placeholderImageWithSize:(CGSize)size {
+    
+    // 占位图的背景色
+    UIColor *backgroundColor = [UIColor grayColor];
+    UIGraphicsBeginImageContextWithOptions(size,0, [UIScreen mainScreen].scale);
+    [backgroundColor set];
+    
+    if (size.width > 48 && size.height > 48) {// 小于48pt 不显示logo图片
+        // 中间LOGO图片
+        UIImage *image = [UIImage imageNamed:@"占位图"];
+        // 根据占位图需要的尺寸 计算 中间LOGO的宽高
+        CGSize logoSize = image.size;
+        // 绘图
+        UIRectFill(CGRectMake(0,0, size.width, size.height));
+        CGFloat imageX = (size.width / 2) - (logoSize.width / 2);
+        CGFloat imageY = (size.height / 2) - (logoSize.height / 2);
+        [image drawInRect:CGRectMake(imageX, imageY, logoSize.width, logoSize.height)];
+    }
+    UIImage *resImage =UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resImage;
+    
+}
 @end
