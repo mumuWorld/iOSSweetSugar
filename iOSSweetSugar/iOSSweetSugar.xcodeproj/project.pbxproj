@@ -18,6 +18,7 @@
 		B483FEB322490E4C00616FDC /* iOSSweetSugarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEB222490E4C00616FDC /* iOSSweetSugarTests.m */; };
 		B483FEBE22490E4C00616FDC /* iOSSweetSugarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEBD22490E4C00616FDC /* iOSSweetSugarUITests.m */; };
 		B483FECE22490E9200616FDC /* MMDispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FECD22490E9200616FDC /* MMDispatchTimer.m */; };
+		DF0E96FB22784A6C00D88AAC /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DF0E96FA22784A6C00D88AAC /* 1.jpeg */; };
 		DF9529E2226FF57E00EEEB17 /* NSURL+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9529E1226FF57E00EEEB17 /* NSURL+Tools.m */; };
 		DF9529E5226FF5EF00EEEB17 /* NSDate+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9529E4226FF5EF00EEEB17 /* NSDate+Tools.m */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		B483FEBF22490E4C00616FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B483FECC22490E9200616FDC /* MMDispatchTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDispatchTimer.h; sourceTree = "<group>"; };
 		B483FECD22490E9200616FDC /* MMDispatchTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDispatchTimer.m; sourceTree = "<group>"; };
+		DF0E96FA22784A6C00D88AAC /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		DF9529E0226FF57E00EEEB17 /* NSURL+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Tools.h"; sourceTree = "<group>"; };
 		DF9529E1226FF57E00EEEB17 /* NSURL+Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Tools.m"; sourceTree = "<group>"; };
 		DF9529E3226FF5EF00EEEB17 /* NSDate+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Tools.h"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		B483FE9822490E4900616FDC /* iOSSweetSugar */ = {
 			isa = PBXGroup;
 			children = (
+				DF0E96FA22784A6C00D88AAC /* 1.jpeg */,
 				B4406BE22250BFAA003410A3 /* Category */,
 				B483FECB22490E5B00616FDC /* dispatch定时器 */,
 				B483FE9922490E4900616FDC /* AppDelegate.h */,
@@ -279,6 +282,7 @@
 				B483FEA622490E4B00616FDC /* LaunchScreen.storyboard in Resources */,
 				B483FEA322490E4B00616FDC /* Assets.xcassets in Resources */,
 				B483FEA122490E4900616FDC /* Main.storyboard in Resources */,
+				DF0E96FB22784A6C00D88AAC /* 1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

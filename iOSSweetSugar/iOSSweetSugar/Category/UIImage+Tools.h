@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param size size
  @param handler 回调block
  */
-+ (void)mm_asyncCircleImage:(UIImage *)image withSize:(CGSize)size withComplite:(void(^)(UIImage *circle_image))handler;
++ (void)mm_asyncCircleImage:(UIImage *)image withSize:(CGSize)size fillColor:(UIColor *)fillColor withComplite:(void(^)(UIImage *circle_image))handler;
 
 
 /**
