@@ -11,6 +11,9 @@
 NSString *const cDateFormatterTypeDefault = @"yyyy-MM-dd HH:mm:ss";
 NSString *const cDateFormatterTypeShortYMD = @"yyyy-MM-dd";
 NSString *const cDateFormatterTypeSeparateYMD = @"yyyy, MM , DD";
+NSString *const cDateFormatterTypeShortMD = @"MM-dd";
+NSString *const cDateFormatterTypeShortHourMin = @"HH:mm";
+
 //避免重复创建formatter对象 耗费性能
 static NSDateFormatter *shareFormatter = nil;
 
@@ -19,7 +22,7 @@ static NSDateFormatter *shareFormatter = nil;
     shareFormatter = [[NSDateFormatter alloc] init];
 }
 
-+ (NSString *)mm_getDateString:(NSInteger)timeStamp format:(cDateFormatterStringKey)format {
++ (NSString *)mm_getDateString:(NSTimeInterval)timeStamp format:(cDateFormatterStringKey)format {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeStamp];
     return [self mm_getDateStringUsingDate:date format:format];
 }
@@ -58,7 +61,7 @@ static NSDateFormatter *shareFormatter = nil;
     shareFormatter.timeZone = [NSTimeZone localTimeZone];
     NSDate *tDate = [shareFormatter dateFromString:date];
     NSTimeInterval time = [tDate timeIntervalSince1970];
-    return [NSString stringWithFormat:@"%d",(NSInteger)time];
+    return [NSString stringWithFormat:@"%zd",(NSInteger)time];
 }
 + (NSString *)mm_compareCurrentTime:(NSInteger)timeStamp {
     //计算时间差值
@@ -98,5 +101,29 @@ static NSDateFormatter *shareFormatter = nil;
     NSDate * date_lit = [shareFormatter dateFromString:date_smal];
     NSTimeInterval timeInterval = [date_big_d timeIntervalSinceDate:date_lit];
     return timeInterval;
+}
+
+#pragma mark 算出月份的天数
++ (NSDate *)mm_getDateWithDataStr:(NSString *)dataStr format:(cDateFormatterStringKey)format {
+    shareFormatter.dateFormat = format;
+    shareFormatter.locale = [NSLocale currentLocale];
+    shareFormatter.timeZone = [NSTimeZone localTimeZone];
+    NSDate *tDate = [shareFormatter dateFromString:dataStr];
+    return tDate;
+}
++ (NSTimeInterval)mm_getTimeStampWithData:(NSDate *)date {
+    NSTimeInterval time = [date timeIntervalSince1970];
+    return time;
+}
+
++ (NSInteger)mm_getCurrentDayCountWith:(NSString *)dateStr format:(cDateFormatterStringKey)format {
+    //    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *tDate = [self mm_getDateWithDataStr:dateStr format:format];
+    
+    NSCalendar * calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    // 通过该方法计算特定日期月份的天数
+    NSRange monthRange =  [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:tDate];
+    
+    return monthRange.length;
 }
 @end

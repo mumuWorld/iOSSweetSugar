@@ -16,6 +16,10 @@ extern cDateFormatterStringKey const cDateFormatterTypeDefault;
 extern cDateFormatterStringKey const cDateFormatterTypeShortYMD;
 //@"yyyy, MM , DD" 返回一个年月日的数组
 extern cDateFormatterStringKey const cDateFormatterTypeSeparateYMD;
+extern cDateFormatterStringKey const cDateFormatterTypeShortMD;
+extern cDateFormatterStringKey const cDateFormatterTypeShortHourMin;
+
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  通过 系统时间戳 获取 string
  */
-+ (NSString *)mm_getDateString:(NSInteger)timeStamp format:(cDateFormatterStringKey)format;
++ (NSString *)mm_getDateString:(NSTimeInterval)timeStamp format:(cDateFormatterStringKey)format;
 + (NSString *)mm_getDateStringUsingDate:(NSDate *)date format:(cDateFormatterStringKey)format;
 
 
@@ -55,6 +59,18 @@ NS_ASSUME_NONNULL_BEGIN
  @param date_big 大的时间
  */
 + (NSTimeInterval )mm_getIntervalWithDate:(NSString *)date_smal withBigDate:(NSString *)date_big withFromat:(cDateFormatterStringKey)format;
+
+/**
+ 获取指定data的天数
+ 
+ @param dateStr 传入日期
+ @param format 格式
+ @return 当前月份天数
+ */
++ (NSInteger)mm_getCurrentDayCountWith:(NSString *)dateStr format:(cDateFormatterStringKey)format;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
