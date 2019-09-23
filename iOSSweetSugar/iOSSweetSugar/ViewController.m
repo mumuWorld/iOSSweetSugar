@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UIImage+Tools.h"
+#import "NSDate+Tools.h"
 
 @interface ViewController ()
 
@@ -24,7 +25,43 @@
         view.image = circle_image;
     }];
     [self.view addSubview:view];
+    
+    NSString *fileUrl = @"123/45.zip";
+//    if ([fileUrl hasSuffix:@".zip"]) {
+//        fileUrl = [fileUrl substringToIndex:fileUrl.length - 4];
+//    }
+    NSArray *finishArr = @[@"1",@"2",@"3",@"4",@"5"];
+    NSArray *subDescArr = [finishArr subarrayWithRange:NSMakeRange(3, finishArr.count -3)];
+    //45
+    NSString *subStr = [fileUrl substringWithRange:NSMakeRange(3, 2)];
+    
+    NSLog(@"query =%@",subDescArr);
+//    1558676396607,1558676396811
 }
-
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSTimeInterval ori = 1558676396811 *0.001;
+    NSTimeInterval time = [ViewController mm_getIntervalTimeCompareCurrentTime:ori];
+    NSLog(@"time =%f",time);
+    NSString *str =nil;
+    if (time > 0) { //是正确的。
+        if (time < 86400) { //小于一天
+            str = [NSDate mm_getDateString:ori format:cDateFormatterTypeShortHourMin];
+        } else {
+            str = [NSDate mm_getDateString:ori format:cDateFormatterTypeShortMD];
+        }
+    }
+    NSDate *date = [NSDate date];
+    NSTimeInterval ddd = date.timeIntervalSinceReferenceDate;
+    NSTimeInterval b = date.timeIntervalSinceNow;
+    NSTimeInterval c = date.timeIntervalSince1970;
+    NSLog(@"time =%f",time);
+    
+}
++ (NSTimeInterval)mm_getIntervalTimeCompareCurrentTime:(NSInteger)timeStamp {
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:timeStamp];
+    NSDate *currentDate = [NSDate date];
+    //计算时间差值
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:confromTimesp];
+    return timeInterval;
+}
 @end
