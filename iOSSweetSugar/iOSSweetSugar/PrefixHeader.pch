@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  iOSSweetSugar
+//
+//  Created by yangjie on 2019/11/20.
+//  Copyright © 2019 Mumu. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define MAS_SHORTHAND
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "Masonry.h"
+#endif /* PrefixHeader_pch */

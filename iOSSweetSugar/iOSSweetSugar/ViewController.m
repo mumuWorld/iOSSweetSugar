@@ -16,6 +16,9 @@
 
 @implementation ViewController
 
+typedef void(^TestBlock)(int test);
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -36,6 +39,18 @@
     NSString *subStr = [fileUrl substringWithRange:NSMakeRange(3, 2)];
     
     NSLog(@"query =%@",subDescArr);
+    int testInt = 10;
+    
+    TestBlock block = ^(int test) {
+        int t = test + testInt;
+//        testInt = 20;
+        NSLog(@"t=%d -> %d",t, testInt);
+    };
+    NSArray * arr = [view makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(20);
+//        make.right.equalTo(self.view).offset
+    }];
+    
 //    1558676396607,1558676396811
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
