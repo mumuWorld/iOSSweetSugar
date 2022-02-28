@@ -20,6 +20,7 @@
 		B483FEB322490E4C00616FDC /* iOSSweetSugarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEB222490E4C00616FDC /* iOSSweetSugarTests.m */; };
 		B483FEBE22490E4C00616FDC /* iOSSweetSugarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FEBD22490E4C00616FDC /* iOSSweetSugarUITests.m */; };
 		B483FECE22490E9200616FDC /* MMDispatchTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = B483FECD22490E9200616FDC /* MMDispatchTimer.m */; };
+		B4F0F90727CC6E3000BDDD28 /* MMFuncTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B4F0F90627CC6E3000BDDD28 /* MMFuncTool.m */; };
 		DF0E96FB22784A6C00D88AAC /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DF0E96FA22784A6C00D88AAC /* 1.jpeg */; };
 		DF2ED5D523852313001617F8 /* File.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DF2ED5D423852313001617F8 /* File.rtf */; };
 		DF9529E2226FF57E00EEEB17 /* NSURL+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9529E1226FF57E00EEEB17 /* NSURL+Tools.m */; };
@@ -75,6 +76,8 @@
 		B483FEBF22490E4C00616FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B483FECC22490E9200616FDC /* MMDispatchTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDispatchTimer.h; sourceTree = "<group>"; };
 		B483FECD22490E9200616FDC /* MMDispatchTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDispatchTimer.m; sourceTree = "<group>"; };
+		B4F0F90527CC6E3000BDDD28 /* MMFuncTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMFuncTool.h; sourceTree = "<group>"; };
+		B4F0F90627CC6E3000BDDD28 /* MMFuncTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMFuncTool.m; sourceTree = "<group>"; };
 		D6C5B16F8210E5CC26A58B92 /* Pods-iOSSweetSugarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSSweetSugarTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSSweetSugarTests/Pods-iOSSweetSugarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF0E96FA22784A6C00D88AAC /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		DF2ED5D423852313001617F8 /* File.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = File.rtf; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 		B483FE9822490E4900616FDC /* iOSSweetSugar */ = {
 			isa = PBXGroup;
 			children = (
+				B4F0F90427CC6E1C00BDDD28 /* Test */,
 				DF0E96FA22784A6C00D88AAC /* 1.jpeg */,
 				B4406BE22250BFAA003410A3 /* Category */,
 				B483FECB22490E5B00616FDC /* dispatch定时器 */,
@@ -219,6 +223,15 @@
 				B483FECD22490E9200616FDC /* MMDispatchTimer.m */,
 			);
 			path = "dispatch定时器";
+			sourceTree = "<group>";
+		};
+		B4F0F90427CC6E1C00BDDD28 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				B4F0F90527CC6E3000BDDD28 /* MMFuncTool.h */,
+				B4F0F90627CC6E3000BDDD28 /* MMFuncTool.m */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +442,7 @@
 				B483FEA922490E4B00616FDC /* main.m in Sources */,
 				B483FE9B22490E4900616FDC /* AppDelegate.m in Sources */,
 				B4406BE62250BFE1003410A3 /* UIImage+Tools.m in Sources */,
+				B4F0F90727CC6E3000BDDD28 /* MMFuncTool.m in Sources */,
 				DF9529E5226FF5EF00EEEB17 /* NSDate+Tools.m in Sources */,
 				DF9529E2226FF57E00EEEB17 /* NSURL+Tools.m in Sources */,
 				B483FECE22490E9200616FDC /* MMDispatchTimer.m in Sources */,
@@ -607,7 +621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/fuxi/Documents/Git_pro/iOSSweetSugar/iOSSweetSugar/iOSSweetSugar/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/mumu/Documents/Git_Pro/iOS_SweetSugar/iOSSweetSugar/iOSSweetSugar/PrefixHeader.pch;
 				INFOPLIST_FILE = iOSSweetSugar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -627,7 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/fuxi/Documents/Git_pro/iOSSweetSugar/iOSSweetSugar/iOSSweetSugar/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/mumu/Documents/Git_Pro/iOS_SweetSugar/iOSSweetSugar/iOSSweetSugar/PrefixHeader.pch;
 				INFOPLIST_FILE = iOSSweetSugar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -9,12 +9,14 @@
 #import "ViewController.h"
 #import "UIImage+Tools.h"
 #import "NSDate+Tools.h"
+#import "MMFuncTool.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+@synthesize testStr;
 
 typedef void(^TestBlock)(int test);
 
@@ -50,6 +52,10 @@ typedef void(^TestBlock)(int test);
         make.left.equalTo(self.view).offset(20);
 //        make.right.equalTo(self.view).offset
     }];
+    NSLog(@"---%@",self.testStr);
+    self.testStr = @"teste";
+    
+    [[MMFuncTool new] applyLayoutPreservingOrigin:YES dimensionFlexibility:YGDimensionFlexibilityFlexibleHeight];
     
 //    1558676396607,1558676396811
 }

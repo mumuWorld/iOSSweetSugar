@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@protocol MMCustomProtocol <NSObject>
+
+@property (nonatomic, copy) NSString *testStr;
+
+@end
+
+@interface ViewController : UIViewController <MMCustomProtocol>
 
 
 @end
